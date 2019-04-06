@@ -1,0 +1,34 @@
+{
+  "name": "expert-aip",
+  "version": "1.0.0",
+  "description": "Provides restful API for managing User profile to provide a look up for anyone who is looking for expert around the world.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/workfigure/expert-AIP.git"
+  },
+  "author": "Ammanuel Gessese <ammanyer@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/workfigure/expert-AIP/issues"
+  },
+  "homepage": "https://github.com/workfigure/expert-AIP#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mongoose": "^5.4.20"
+  },
+  "devDependencies": {
+    "apidoc": "^0.17.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2"
+  }
+}
