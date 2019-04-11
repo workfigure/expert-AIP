@@ -6,5 +6,15 @@ global.GATEWAY_PROVIDER = 'mongodb';
 
 module.exports = {
     MODE: 'development', // production or development
-    MONGODB_CONNECTION_STRING: 'mongodb://luis:luis@ds058048.mlab.com:58048/nodestr' //mongodb connection string (required)
+    //MONGODB_CONNECTION_STRING: 'mongodb://luis:luis@ds058048.mlab.com:58048/nodestr' //mongodb connection string (required)
+    MONGODB: {
+        HOST: 'localhost',
+        PORT: '27017',
+        DATABASE: 'expert',
+        USERNAME: 'operation',
+        PASSWORD: 'admin'
+    }
 };
+
+//mongoose.connect(`mongodb://${config.MONGODB.USERNAME}:${config.MONGODB.PASSWORD}@${config.MONGODB.HOST}:${config.MONGODB.PORT}/${config.MONGODB.DATABASE}`)
+   

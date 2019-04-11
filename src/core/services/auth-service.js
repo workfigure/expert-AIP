@@ -15,7 +15,7 @@ exports.authorize = function (req, res, next) {
 
     if (!token) {
         res.status(401).json({
-            message: 'Acesso Restrito'
+            message: 'Need to login.'
         });
     } else {
         jwt.verify(token, global.SALT_KEY, function (error, decoded) {
