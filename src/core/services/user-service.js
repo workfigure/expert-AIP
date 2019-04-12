@@ -1,6 +1,6 @@
 'use strict';
 /**
- * This the core of the business domain which means, this should have all the logic that is related to the domain.
+ * This the core of the USER business domain which means, this should have all the logic that is related to the User.
  * And also it should not depends on any framework or cloud platform.
  */
 
