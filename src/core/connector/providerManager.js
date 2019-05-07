@@ -13,5 +13,8 @@ module.exports = {
     getUser: provider.getUser,
     getUserById: provider.getUserById,
     createUser: provider.createUser,
-    authenticate: provider.authenticate
+    authenticate: provider.authenticate,
+    getExpert: provider.getExpert,
+    getExpertById: provider.getExpertById,
+    createExpert: provider.createExpert,
 };

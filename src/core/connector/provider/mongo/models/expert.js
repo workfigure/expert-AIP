@@ -16,19 +16,19 @@ const schema = new Schema({
         index: true,
         unique: true
     },
-    Bio: {
+    bio: {
         type: String
     },
     URL: {
         type: String
     },
-    Company: {
+    company: {
         type: String
     },
-    Location: {
+    location: {
         type: String
     },
-    Skills: [skillSchema],
+    skills: [skillSchema],
     active: {
         type: Boolean,
         required: true,
