@@ -1,8 +1,8 @@
 'use strict'
 
-const repository = require('../repositories/user-repository');
-const validationContract = require('../validators/validator');
-const authService = require('../services/auth-service');
+const userService = require('../../core/services/user-service');
+const validationContract = require('../validators/validator.js');
+const authService = require('../../core/services/auth-service');
 const md5 = require('md5');
 
 /**
@@ -31,7 +31,7 @@ const md5 = require('md5');
  */
 exports.get = async(req, res, next) => {
     try {
-        let data = await repository.get();
+        let data = await userService.get();
         res.status(200).send(data);
     } catch(e) {
         res.status(500).send({message: 'Sorry, we can not retrieve user info.'});
@@ -64,7 +64,7 @@ exports.get = async(req, res, next) => {
  */
 exports.getById = async(req, res, next) => {
     try {
-        let data = await repository.getById(req.params.id);
+        let data = await userService.getById(req.params.id);
         res.status(200).send(data);
     } catch(e) {
         res.status(500).send({message: 'Falha ao processar sua requisição'});
@@ -104,7 +104,7 @@ exports.post = async(req, res, next) => {
             return;
         }
 
-        await repository.create({
+        await userService.create({
             name: req.body.name,
             email: req.body.email,
             password: md5(req.body.password + global.SALT_KEY),
@@ -148,7 +148,7 @@ exports.post = async(req, res, next) => {
  */
 exports.authenticate = async(req, res, next) => {
     try {
-        let customer = await repository.authenticate({
+        let customer = await userService.authenticate({
             email: req.body.email,
             password: md5(req.body.password + global.SALT_KEY)
         });
@@ -208,7 +208,7 @@ exports.refreshToken = async(req, res, next) => {
     try {
         let token = req.body.token || req.query.token || req.headers['x-access-token'];
         let data = await authService.decodeToken(token);
-        const customer = await repository.getById(data.id);
+        const customer = await userService.getById(data.id);
 
         if(!customer) {
             res.status(400).send({error: 'User not found'});
